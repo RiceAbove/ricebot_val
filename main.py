@@ -11,9 +11,9 @@ class Bot(commands.Bot):
         super().__init__(
             irc_token=os.environ['IRC_TOKEN'], 
             client_id=os.environ['CLIENT_ID'], 
-            nick='rice_above', 
+            nick=os.environ['USERNAME'], 
             prefix='!',
-            initial_channels=['rice_above'])
+            initial_channels=[os.environ['USERNAME']])
 
     # Events don't need decorators when subclassed
     async def event_ready(self):
