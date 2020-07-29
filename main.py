@@ -1,5 +1,11 @@
-import time, os, pyautogui
+import os, time, pyautogui
 from twitchio.ext import commands
+
+# Things to finish for bot:
+# - [X] Fix burst
+# - [NO] Camera movement
+# - [X] Abilities
+# - [X] Plant/Defuse Spike
 
 # Safety stuff from pyautogui
 pyautogui.PAUSE = 2.5
@@ -11,9 +17,9 @@ class Bot(commands.Bot):
         super().__init__(
             irc_token=os.environ['IRC_TOKEN'], 
             client_id=os.environ['CLIENT_ID'], 
-            nick=os.environ['USERNAME'], 
+            nick='rice_above', 
             prefix='!',
-            initial_channels=[os.environ['USERNAME']])
+            initial_channels=['rice_above'])
 
     # Events don't need decorators when subclassed
     async def event_ready(self):
@@ -31,14 +37,6 @@ class Bot(commands.Bot):
     async def my_command(self, ctx):
         print("This is a test")
         await ctx.send(f'Hello {ctx.author.name}!')
-
-    # Testing pyautogui
-    @commands.command(name='pyautogui')
-    async def pyautogui(self, ctx):
-        print("Testing pyautogui")
-        time.sleep(2)
-        pyautogui.typewrite('Hello world!', interval=0.25)
-        await ctx.send(f'Thank you for testing {ctx.author.name}!')
 
     # Move character left
     @commands.command(name='a')
@@ -101,30 +99,73 @@ class Bot(commands.Bot):
         pyautogui.keyDown('3')
         pyautogui.keyUp('3')
 
-    # Tap shoot
-    @commands.command(name='tap')
+    # Tap shoot once
+    @commands.command(name='one_tap')
     async def tap(self, ctx):
-        print("Tap Shooting")
+        print("One Tap Shooting")
         pyautogui.click()
 
-    # Burst shoot
-    @commands.command(name='burst')
+    # Tap shoot three times
+    @commands.command(name='three_taps')
     async def burst(self, ctx):
-        print("Burst Shooting")
-        pyautogui.click(clicks=3, interval=0.75)
+        print("Three Tap Shooting")
+        pyautogui.click(clicks=3, interval=0.99)
 
     # Spray shoot
     @commands.command(name='spray')
     async def spray(self, ctx):
         print("Spray Shooting")
-        pyautogui.mouseDown()
-        pyautogui.mouseUp()
+        pyautogui.moveTo(960, 540)
+        pyautogui.dragTo(960, 1080, 1, button='left')
+
+    # Plant Spike
+    @commands.command(name='plant')
+    async def plant(self, ctx):
+        print("Planting spike")
+        pyautogui.keyDown('4')
+        time.sleep(2)
+        pyautogui.keyUp('4')
 
 
+    # Defuse Spike
+    @commands.command(name='defuse')
+    async def defuse(self, ctx):
+        print("Defusing Spike")
+        pyautogui.keyDown(w'4')
+        time.sleep(10)
+        pyautogui.keyUp('4')
 
-# time.sleep(2)
-# pyautogui.typewrite('Hello world!', interval=0.25)
+    # We will be using Phoenix's abilities, but you can
+    # change the control accordingly based on your keyboard
+    # set up and character that you choose
 
+    # Blaze
+    @commands.command(name='blaze')
+    async def blaze(self, ctx):
+        print("Blaze")
+        pyautogui.press('c')
+
+    # Curveball
+    @commands.command(name='curveball')
+    async def curveball(self, ctx):
+        print("Curveball")
+        pyautogui.press('q')
+
+
+    # Hot Hands
+    @commands.command(name='hot_hands')
+    async def hot_hands(self, ctx):
+        print("Hot Hands")
+        pyautogui.press('e')
+
+
+    # Run It Back
+    @commands.command(name='ult')
+    async def run_it_back(self, ctx):
+        print("Run It Back")
+        pyautogui.press('x')
+
+    
 
 
 bot = Bot()
