@@ -17,9 +17,9 @@ class Bot(commands.Bot):
         super().__init__(
             irc_token=os.environ['IRC_TOKEN'], 
             client_id=os.environ['CLIENT_ID'], 
-            nick='rice_above', 
+            nick=os.environ['TWITCH_NAME'], 
             prefix='!',
-            initial_channels=['rice_above'])
+            initial_channels=[os.environ['TWITCH_NAME']])
 
     # Events don't need decorators when subclassed
     async def event_ready(self):
@@ -131,7 +131,7 @@ class Bot(commands.Bot):
     @commands.command(name='defuse')
     async def defuse(self, ctx):
         print("Defusing Spike")
-        pyautogui.keyDown(w'4')
+        pyautogui.keyDown('4')
         time.sleep(10)
         pyautogui.keyUp('4')
 
