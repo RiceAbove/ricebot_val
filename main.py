@@ -1,4 +1,4 @@
-import os, time, pyautogui
+import os, time, pyautogui, pydirectinput
 from twitchio.ext import commands
 
 # Things to finish for bot:
@@ -9,7 +9,8 @@ from twitchio.ext import commands
 
 # Safety stuff from pyautogui
 pyautogui.PAUSE = 2.5
-pyautogui.FAILSALE = True
+pyautogui.FAILSAFE = True
+pydirectinput.FAILSAFE = True
 
 class Bot(commands.Bot):
 
@@ -38,13 +39,17 @@ class Bot(commands.Bot):
         print("This is a test")
         await ctx.send(f'Hello {ctx.author.name}!')
 
+    '''
+    Character Movement
+    '''
+
     # Move character left
     @commands.command(name='a')
     async def move_left(self, ctx):
         print("Moving left")
         pyautogui.keyDown('a')
         pyautogui.keyUp('a')
-        # await ctx.send(f'You have moved left for 2 second!')
+
 
     # Move character right
     @commands.command(name='d')
@@ -52,7 +57,7 @@ class Bot(commands.Bot):
         print("Moving right")
         pyautogui.keyDown('d')
         pyautogui.keyUp('d')
-        # await ctx.send(f'You have moved right for 2 second!')
+        
 
     # Move character forward
     @commands.command(name='w')
@@ -60,7 +65,7 @@ class Bot(commands.Bot):
         print("Moving forward")
         pyautogui.keyDown('w')
         pyautogui.keyUp('w')
-        # await ctx.send(f'You have moved forward for 2 second!')
+        
 
     # Move character back
     @commands.command(name='s')
@@ -68,7 +73,7 @@ class Bot(commands.Bot):
         print("Moving back")
         pyautogui.keyDown('s')
         pyautogui.keyUp('s')
-        # await ctx.send(f'You have moved back for 2 second!')
+        
 
     # Make character jump
     @commands.command(name='space')
@@ -76,7 +81,23 @@ class Bot(commands.Bot):
         print("Jump")
         pyautogui.keyDown('space')
         pyautogui.keyUp('space')
-        # await ctx.send(f'You have moved back for 2 second!')
+        
+
+    '''
+    Camera movement
+    '''
+
+    # # Character looks to the left
+    # @commands.command(name='m_left')
+    # async def mouse_left(self, ctx, message):
+    #     print("Move mouse left", str(message))
+    #     # pydirectinput.moveTo(960, 540)
+    #     mouse.move(1000, 540, duration=5)
+
+
+    '''
+    Switching Weapons
+    '''
 
     # Primary weapon
     @commands.command(name='primary')
@@ -99,6 +120,10 @@ class Bot(commands.Bot):
         pyautogui.keyDown('3')
         pyautogui.keyUp('3')
 
+    '''
+    Shooting weapon
+    '''
+
     # Tap shoot once
     @commands.command(name='one_tap')
     async def tap(self, ctx):
@@ -118,6 +143,10 @@ class Bot(commands.Bot):
         pyautogui.moveTo(960, 540)
         pyautogui.dragTo(960, 1080, 1, button='left')
 
+    '''
+    Spike related commands
+    '''
+
     # Plant Spike
     @commands.command(name='plant')
     async def plant(self, ctx):
@@ -135,9 +164,13 @@ class Bot(commands.Bot):
         time.sleep(10)
         pyautogui.keyUp('4')
 
-    # We will be using Phoenix's abilities, but you can
-    # change the control accordingly based on your keyboard
-    # set up and character that you choose
+    '''
+    Character Abilities
+
+    NOTE: We will be using Phoenix's abilities, but you can
+    change the control accordingly based on your keyboard
+    set up and character that you choose
+    '''
 
     # Blaze
     @commands.command(name='blaze')
