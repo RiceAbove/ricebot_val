@@ -85,14 +85,15 @@ class Bot(commands.Bot):
 
     '''
     Camera movement
+
+    NOTE: CURRENTLY DOESN'T WORK FOR 
     '''
 
-    # # Character looks to the left
+    # Character looks to the left
     # @commands.command(name='m_left')
-    # async def mouse_left(self, ctx, message):
-    #     print("Move mouse left", str(message))
-    #     # pydirectinput.moveTo(960, 540)
-    #     mouse.move(1000, 540, duration=5)
+    # async def mouse_left(self, ctx):
+    #     print("Move mouse left")
+    #     pydirectinput.moveTo(50, 50)
 
 
     '''
