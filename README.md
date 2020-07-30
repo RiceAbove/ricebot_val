@@ -49,7 +49,7 @@ Sadly no Python libraries support camera movement in Valorant. If you find a fix
 
 ### Character Abilities
 NOTE: We will be using Phoenix's abilities, but you can
-change the control accordingly based on your keyboard
+change the controls accordingly based on your keyboard
 set up and character that you choose
 
 - !blaze: Blaze
