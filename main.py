@@ -134,7 +134,7 @@ class Bot(commands.Bot):
         pyautogui.click()
 
     # Tap shoot three times
-    @commands.command(name='three_taps')
+    @commands.command(name='three_tap')
     async def burst(self, ctx):
         print("Three Tap Shooting")
         pyautogui.click(clicks=3, interval=0.99)
@@ -182,14 +182,14 @@ class Bot(commands.Bot):
         pyautogui.press('c')
 
     # Curveball
-    @commands.command(name='curveball')
+    @commands.command(name='curve')
     async def curveball(self, ctx):
         print("Curveball")
         pyautogui.press('q')
 
 
     # Hot Hands
-    @commands.command(name='hot_hands')
+    @commands.command(name='hot')
     async def hot_hands(self, ctx):
         print("Hot Hands")
         pyautogui.press('e')
