@@ -4,7 +4,7 @@ A Twitch chatbot that lets users in chat play VALORANT
 ## About
 I was inspired by DougDoug when he had Twitch chat beat a single level of Mario 64. [Video here](https://youtu.be/VqlDyEwtFlY).
 Because of this, I was inspired to create a Twitch bot that also took commands from Twitch chat in order to play Riot's new
-FPS shooter VALORANT. 
+FPS shooter VALORANT. If you guys are interested in checking out my stream, you can check it out [here](https://www.twitch.tv/rice_above).
 
 ## Built With
 - Python
