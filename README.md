@@ -16,7 +16,7 @@ FPS shooter VALORANT.
 This project is licensed under the [GPL-3.0](LICENSE) - see the LICENSE file for details
 
 ## Contributors 
-- **Gico Carlo Evangelista** - [RiceAbove](https://github.com/RiceAbove), evangelsitagico@gmail.com - Creator 
+- **Gico Carlo Evangelista** - [RiceAbove](https://github.com/RiceAbove), evangelistagico@gmail.com - Creator 
 
 # Commands 
 ### Character Movement
