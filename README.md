@@ -1,5 +1,22 @@
 # RiceBot Valorant
-A twitch chatbot that lets users in chat play VALORANT
+A Twitch chatbot that lets users in chat play VALORANT
+
+## About
+I was inspired by DougDoug when he had Twitch chat beat a single level of Mario 64. (Video here)[https://youtu.be/VqlDyEwtFlY]
+Because of this, I was inspired to create a Twitch bot that also took commands from Twitch chat in order to play Riot's new
+FPS shooter VALORANT. 
+
+## Built With
+- Python
+- [TwitchIO](https://github.com/TwitchIO/TwitchIO)
+- [PyAutoGUI](https://github.com/asweigart/pyautogui)
+- [pydirectinput](https://github.com/learncodebygaming/pydirectinput) - Not implemented, but could be used for future updates to replace PyAutoGUI
+
+## License
+This project is licensed under the [GPL-3.0](LICENSE) - see the LICENSE file for details
+
+## Contributors 
+- **Gico Carlo Evangelista** - [RiceAbove](https://github.com/RiceAbove), evangelsitagico@gmail.com - Creator 
 
 # Commands 
 ### Character Movement
