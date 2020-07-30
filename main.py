@@ -86,7 +86,9 @@ class Bot(commands.Bot):
     '''
     Camera movement
 
-    NOTE: CURRENTLY DOESN'T WORK FOR 
+    NOTE: CURRENTLY DOESN'T WORK FOR VALORANT.
+          IF YOU HAPPEN TO FIND A FIX PLEASE SUBMIT 
+          A PR. THANK YOU!
     '''
 
     # Character looks to the left
@@ -101,7 +103,7 @@ class Bot(commands.Bot):
     '''
 
     # Primary weapon
-    @commands.command(name='primary')
+    @commands.command(name='rifle')
     async def primary(self, ctx):
         print("Primary weapon")
         pyautogui.keyDown('1')
